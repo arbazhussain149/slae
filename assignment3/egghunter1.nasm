@@ -17,7 +17,9 @@ _start:
 	mul ecx; eax,edx = 0
 page:
 	or dx,0xfff ; align the memory address, not sure why, need to understand this later
-	; TODO: understand why dx need to align with 0xfff
+	; TODO: understand why dx need to align with 0xfff , 
+	; ANSWER: because this is speeding up the process, that we can search it in more robust way
+	; the process is 1000 -> 2000 -> 3000 -> until valid address found let say 10000 is valid accessible address -> 10001 -> 10002 -> 10003
 
 search:
 	inc edx ; this would cause 0xfff + 0x1 = 0x1000
